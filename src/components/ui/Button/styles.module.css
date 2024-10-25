@@ -1,0 +1,22 @@
+.button {
+    font-size: 1rem;
+    line-height: 120%;
+    align-items: center;
+    background-color: var(--primary-light);
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    color: var(--white);
+    cursor: pointer;
+    padding: 10px 21px;
+    text-align: center;
+    transition: background .3s ease-in-out;
+    &.fullWidth{
+        width: 100%;
+        align-self: stretch;
+    }
+}
+
+.button:hover {
+    background-color: var(--primary);
+}

@@ -1,0 +1,17 @@
+.iconButton {
+    width: 2.5rem;
+    height:  2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--content);
+    transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+    color: var(--primary);
+}
+
+.iconButton.isActive {
+    color: var(--primary);
+}

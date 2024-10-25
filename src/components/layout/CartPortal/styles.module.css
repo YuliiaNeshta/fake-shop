@@ -1,0 +1,49 @@
+.portalWrapper {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.cartContainer {
+    background: white;
+    padding: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    z-index: 1001;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 35rem;
+}
+
+@media (max-width: 500px) {
+    .cartContainer {
+        inset: 0;
+        width: 100%;
+    }
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-bottom: 20px;
+}

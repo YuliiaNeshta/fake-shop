@@ -1,0 +1,41 @@
+.cartItem{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.itemInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+}
+
+.image{
+  width: 6.25rem;
+  height: 6.25rem;
+  object-fit: contain;
+}
+
+.cartActions{
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.productName{
+  font-size: 1rem;
+  max-width: 200px;
+}
+
+.amount{
+  width: 40px;
+  text-align: center;
+  padding: 2px;
+}
+
+.productsAmountActions{
+  display: flex;
+}

@@ -1,0 +1,44 @@
+.card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    gap: 0.7rem;
+}
+
+.image{
+    height: 12.5rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+}
+
+.cardInfo{
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 0.7rem;
+}
+
+.cardPrice {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title{
+    font-size: 1.2rem;
+    line-height: 120%;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 0.8rem;
+    line-height: 110%;
+}
