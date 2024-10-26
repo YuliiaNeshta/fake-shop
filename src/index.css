@@ -3,6 +3,7 @@
 :root{
   --primary: #007F73;
   --primary-light: #4CCD99;
+  --primary-light-opacity: rgba(76, 205, 153, 0.3);
   --secondary: #FFC700;
   --light-secondary: #FFF455;
   --content: #00100e;

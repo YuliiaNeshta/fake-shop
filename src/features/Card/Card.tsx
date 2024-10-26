@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 import { FC } from "react";
-import { Product } from "../../../types/productTypes.ts";
-import { useProductStore } from "../../../store/store.ts";
-import Button from "../../ui/Button";
+import { Product } from "../../types/productTypes.ts";
+import { useProductStore } from "../../store/store.ts";
+import Button from "../../components/ui/Button";
 
 interface CardProps {
   card: Product;

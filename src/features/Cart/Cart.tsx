@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
-import Button from "../../ui/Button";
-import { useProductStore } from "../../../store/store.ts";
-import { ProductInCart } from "../../../types/productTypes.ts";
 import CartItem from "../CartItem";
+import { useProductStore } from "../../store/store.ts";
+import Button from "../../components/ui/Button";
+import { ProductInCart } from "../../types/productTypes.ts";
 
 const Cart = () => {
   const cart = useProductStore((state) => state.cart);

@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Card from "../Card";
-import { Product } from "../../../types/productTypes.ts";
+import { Product } from "../../types/productTypes.ts";
 
 const getProducts = async () => {
   const response = await fetch("https://fakestoreapi.com/products");

@@ -1,10 +1,12 @@
 import SearchInput from "../../components/ui/SearchInput";
 import { useProductStore } from "../../store/store.ts";
-import Cards from "../../components/layout/Cards";
+
 import { useState } from "react";
-import CartPortal from "../../components/layout/CartPortal";
+
 import styles from "./styles.module.css";
 import Button from "../../components/ui/Button";
+import Cards from "../../features/Cards";
+import CartPortal from "../../features/CartPortal";
 
 const Home = () => {
   const cart = useProductStore((state) => state.cart);
@@ -21,10 +23,7 @@ const Home = () => {
     <div className="container">
       <div className={styles.header}>
         <SearchInput />
-        <Button
-          text="Open Cart"
-          onClick={toggleCart}
-        ></Button>
+        <Button text="Open Cart" onClick={toggleCart}></Button>
       </div>
 
       <Cards />

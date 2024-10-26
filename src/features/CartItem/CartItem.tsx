@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
-import Button from "../../ui/Button";
-import { ProductInCart } from "../../../types/productTypes.ts";
 import { FC } from "react";
-import { useProductStore } from "../../../store/store.ts";
+import { useProductStore } from "../../store/store.ts";
+import { ProductInCart } from "../../types/productTypes.ts";
+import Button from "../../components/ui/Button";
 
 interface CartItemProps {
   product: ProductInCart;
@@ -29,9 +29,19 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
 
       <div className={styles.cartActions}>
         <div className={styles.productsAmountActions}>
-          <button onClick={() => decreaseAmountInCart(product.id)}>-</button>
+          <button
+            className={styles.iconButton}
+            onClick={() => decreaseAmountInCart(product.id)}
+          >
+            -
+          </button>
           <span className={styles.amount}>{product.amount}</span>
-          <button onClick={() => increaseAmountInCart(product.id)}>+</button>
+          <button
+            className={styles.iconButton}
+            onClick={() => increaseAmountInCart(product.id)}
+          >
+            +
+          </button>
         </div>
         <Button onClick={() => removeFromCart(product.id)} text="X" />
       </div>
