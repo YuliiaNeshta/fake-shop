@@ -5,6 +5,7 @@ import Card from "../Card";
 import { Product } from "../../types/productTypes.ts";
 import { useProductStore } from "../../store/store.ts";
 import { getProducts } from "../../services/getProducts.ts";
+import SpinnerIcon from "../../assets/svg/spinner.svg";
 
 const Cards: FC = () => {
   const { products, setProducts } = useProductStore();
@@ -21,7 +22,11 @@ const Cards: FC = () => {
   }, [data]);
 
   if (isPending) {
-    return <span>Loading...</span>;
+    return (
+      <div className={styles.spinner}>
+        <SpinnerIcon />
+      </div>
+    );
   }
 
   if (isError) {
@@ -31,7 +36,7 @@ const Cards: FC = () => {
   return (
     <div className={styles.cards}>
       {products.length === 0 ? (
-        <div>No products find</div>
+        <div>No products found</div>
       ) : (
         products?.map((card: Product) => <Card key={card.id} card={card} />)
       )}

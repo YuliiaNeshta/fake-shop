@@ -10,9 +10,7 @@ import { useGetCachedQueryData } from "../../utils/utils.ts";
 
 const Home = () => {
   const products = useProductStore((state) => state.products);
-  const cart = useProductStore((state) => state.cart);
 
-  console.log(cart, "cart");
   const setProducts = useProductStore((state) => state.setProducts);
   const originalProducts = useGetCachedQueryData("products") as Product[];
 

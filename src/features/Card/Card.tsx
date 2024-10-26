@@ -5,6 +5,7 @@ import { useProductStore } from "../../store/store.ts";
 import CartIcon from "../../assets/svg/shoping-cart.svg";
 import AddedCartIcon from "../../assets/svg/shoping-cart-check.svg";
 import IconButton from "../../components/ui/IconButton/index.ts";
+import StarsRating from "../../components/ui/StarsRating";
 
 interface CardProps {
   card: Product;
@@ -39,7 +40,10 @@ const Card: FC<CardProps> = ({ card }) => {
     <div className={styles.card}>
       <img className={styles.image} src={card.image} alt={card.title} />
       <div className={styles.cardInfo}>
-        <p className={styles.title}>{card.title}</p>
+        <p title={card.title} className={styles.title}>
+          {card.title}
+        </p>
+        <StarsRating rating={card.rating} />
         <p className={styles.description}>{card.description}</p>
         <div className={styles.cardFooter}>
           <p className={styles.cardPrice}>{card.price} $</p>

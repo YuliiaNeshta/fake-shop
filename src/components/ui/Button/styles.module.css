@@ -11,6 +11,7 @@
     padding: 10px 21px;
     text-align: center;
     transition: background .3s ease-in-out;
+    white-space: nowrap;
     &.fullWidth{
         width: 100%;
         align-self: stretch;

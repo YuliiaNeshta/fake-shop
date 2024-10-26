@@ -7,7 +7,7 @@
   --secondary: #FFC700;
   --light-secondary: #FFF455;
   --content: #00100e;
-  --icon: #B7B7B7;
+  --icon: #9d9d9d;
   --white: #FFFFFF;
   --danger: #E72929;
   --danger-opacity: rgba(248, 99, 99, 0.34);
@@ -22,6 +22,14 @@ body, html{
 body {
   font-family: "Roboto", sans-serif;
   color: var(--content);
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 6px;
+  }
 }
 
 *, *::before, *::after{

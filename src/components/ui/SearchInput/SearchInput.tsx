@@ -15,15 +15,13 @@ const SearchInput: FC<SearchInputProps> = ({ onChangeCallback }) => {
   };
 
   return (
-    <div>
-      <input
-        className={styles.search}
-        type="search"
-        value={searchValue}
-        onChange={handleInputChange}
-        placeholder="Search..."
-      />
-    </div>
+    <input
+      className={styles.search}
+      type="search"
+      value={searchValue}
+      onChange={handleInputChange}
+      placeholder="Search..."
+    />
   );
 };
 
