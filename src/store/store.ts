@@ -11,14 +11,12 @@ interface ProductsStore {
   decreaseAmountInCart: (id: number) => void;
   increaseAmountInCart: (id: number) => void;
   totalPrice: number;
-  isCartOpen: boolean;
 }
 
 export const useProductStore = create<ProductsStore>((set) => ({
   products: [],
   cart: [],
   totalPrice: 0,
-  isCartOpen: false,
   setProducts: (products: Product[]) => set({ products }),
   addToCart: (newProduct: Product) => {
     set((state) => {
