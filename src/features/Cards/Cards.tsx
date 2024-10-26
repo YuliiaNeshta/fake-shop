@@ -12,7 +12,7 @@ const getProducts = async () => {
 
 const Cards: FC = () => {
   const { data, isPending, isError, error } = useQuery({
-    queryKey: ["todos"],
+    queryKey: ["products"],
     queryFn: getProducts,
   });
 
