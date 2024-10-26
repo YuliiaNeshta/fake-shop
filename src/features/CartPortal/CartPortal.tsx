@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import Cart from "../Cart/Cart.tsx";
 import { FC } from "react";
 import classNames from "classnames";
+import XMarkIcon from "../../assets/svg/x-mark.svg";
 
 interface CartPortalProps {
   isOpen: boolean;
@@ -16,14 +17,12 @@ const CartPortal: FC<CartPortalProps> = ({ isOpen, onClose }) => {
     [styles.open]: isOpen,
   });
 
-  // TODO: add svg icon
-
   return ReactDOM.createPortal(
     <div className={portalClass}>
       <div className={styles.overlay} onClick={onClose}></div>
       <div className={styles.cartContainer}>
         <button className={styles.closeButton} onClick={onClose}>
-          x
+          <XMarkIcon />
         </button>
         <Cart />
       </div>

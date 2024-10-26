@@ -1,20 +1,24 @@
 import styles from "./styles.module.css";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Card from "../Card";
 import { Product } from "../../types/productTypes.ts";
-
-const getProducts = async () => {
-  const response = await fetch("https://fakestoreapi.com/products");
-
-  return response.json();
-};
+import { useProductStore } from "../../store/store.ts";
+import { getProducts } from "../../services/getProducts.ts";
 
 const Cards: FC = () => {
+  const { products, setProducts } = useProductStore();
+
   const { data, isPending, isError, error } = useQuery({
-    queryKey: ["todos"],
+    queryKey: ["products"],
     queryFn: getProducts,
   });
+
+  useEffect(() => {
+    if (data) {
+      setProducts(data);
+    }
+  }, [data]);
 
   if (isPending) {
     return <span>Loading...</span>;
@@ -26,9 +30,11 @@ const Cards: FC = () => {
 
   return (
     <div className={styles.cards}>
-      {data.map((card: Product) => (
-        <Card key={card.id} card={card} />
-      ))}
+      {products.length === 0 ? (
+        <div>No products find</div>
+      ) : (
+        products?.map((card: Product) => <Card key={card.id} card={card} />)
+      )}
     </div>
   );
 };

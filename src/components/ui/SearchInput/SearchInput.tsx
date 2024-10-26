@@ -1,21 +1,18 @@
 import styles from "./styles.module.css";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
-const SearchInput = () => {
+interface SearchInputProps {
+  onChangeCallback?: (searchValue: string) => void;
+}
+
+const SearchInput: FC<SearchInputProps> = ({ onChangeCallback }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
-  };
 
-  // TODO: finish handleSearchResult
-  // const handleSearchResult = () => {
-  //   const searchResult = searchValue.trim().toLowerCase();
-  //   //set products from request to store
-  //   //filter products
-  //   //setNewProducts
-  //   //add debounce??
-  // };
+    onChangeCallback && onChangeCallback(event.target.value);
+  };
 
   return (
     <div>

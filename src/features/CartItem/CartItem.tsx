@@ -2,7 +2,10 @@ import styles from "./styles.module.css";
 import { FC } from "react";
 import { useProductStore } from "../../store/store.ts";
 import { ProductInCart } from "../../types/productTypes.ts";
-import Button from "../../components/ui/Button";
+import TrashIcon from "../../assets/svg/trash.svg";
+import MinusIcon from "../../assets/svg/minus.svg";
+import PlusIcon from "../../assets/svg/plus.svg";
+import IconButton from "../../components/ui/IconButton";
 
 interface CartItemProps {
   product: ProductInCart;
@@ -17,8 +20,6 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
   );
   const removeFromCart = useProductStore((state) => state.removeFromCart);
 
-  // TODO: add IconButton and svg
-
   return (
     <div key={product.id} className={styles.cartItem}>
       <img className={styles.image} src={product.image} alt={product.title} />
@@ -29,21 +30,23 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
 
       <div className={styles.cartActions}>
         <div className={styles.productsAmountActions}>
-          <button
-            className={styles.iconButton}
+          <IconButton
             onClick={() => decreaseAmountInCart(product.id)}
-          >
-            -
-          </button>
+            icon={<MinusIcon />}
+            variant="outlined"
+          />
           <span className={styles.amount}>{product.amount}</span>
-          <button
-            className={styles.iconButton}
+          <IconButton
+            icon={<PlusIcon />}
+            variant="outlined"
             onClick={() => increaseAmountInCart(product.id)}
-          >
-            +
-          </button>
+          />
         </div>
-        <Button onClick={() => removeFromCart(product.id)} text="X" />
+        <IconButton
+          variant="danger"
+          onClick={() => removeFromCart(product.id)}
+          icon={<TrashIcon />}
+        />
       </div>
     </div>
   );

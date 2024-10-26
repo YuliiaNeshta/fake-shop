@@ -9,6 +9,9 @@
   --content: #00100e;
   --icon: #B7B7B7;
   --white: #FFFFFF;
+  --danger: #E72929;
+  --danger-opacity: rgba(248, 99, 99, 0.34);
+  --success: #399918;
 }
 
 body, html{

@@ -34,7 +34,9 @@ const Cart = () => {
           </div>
           <Button
             fullWidth
-            onClick={() => console.log(`Your Products: ${cart}`)}
+            onClick={() =>
+              console.log(`Your Products: ${JSON.stringify(cart, null, "\t")}`)
+            }
             text="Buy"
           />
         </div>

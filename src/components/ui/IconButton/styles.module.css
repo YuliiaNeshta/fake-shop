@@ -1,17 +1,42 @@
 .iconButton {
+    background-color: transparent;
+    color: var(--content);
     width: 2.5rem;
-    height:  2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--content);
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    & svg {
+        width: 1rem;
+        height: 1rem;
+    }
+    &.active {
+        background-color: var(--primary-light);
+    }
+    &.variant-primary{
+        background-color: var(--primary-light-opacity);
+        &:hover{
+            background-color: var(--primary-light);
+        }
+    }
+    &.variant-outlined{
+        border: 1px solid var(--primary);
+        &:hover{
+            background-color: var(--primary-light-opacity);
+        }
+    }
+    &.variant-danger{
+        color: var(--danger);
+        border: 1px solid var(--danger);
+        &:hover{
+            background-color: var(--danger-opacity);
+        }
+    }
 }
 
-.iconButton:hover {
-    color: var(--primary);
-}
-
-.iconButton.isActive {
-    color: var(--primary);
-}

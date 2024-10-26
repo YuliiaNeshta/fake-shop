@@ -2,20 +2,24 @@ import { create } from "zustand";
 import { Product, ProductInCart } from "../types/productTypes.ts";
 
 interface ProductsStore {
+  products: Product[];
   cart: ProductInCart[];
   addToCart: (product: Product) => void;
+  setProducts: (products: Product[]) => void;
   removeFromCart: (id: number) => void;
   cleanCart: () => void;
   decreaseAmountInCart: (id: number) => void;
   increaseAmountInCart: (id: number) => void;
   totalPrice: number;
+  isCartOpen: boolean;
 }
 
 export const useProductStore = create<ProductsStore>((set) => ({
+  products: [],
   cart: [],
   totalPrice: 0,
   isCartOpen: false,
-
+  setProducts: (products: Product[]) => set({ products }),
   addToCart: (newProduct: Product) => {
     set((state) => {
       const existingProduct = state.cart.find(
